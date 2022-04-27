@@ -60,7 +60,7 @@ class _UpdateTodoState extends State<UpdateTodo> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Update Notes'),
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.teal[800],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -80,11 +80,11 @@ class _UpdateTodoState extends State<UpdateTodo> {
               height: 20.0,
             ),
             ListTile(
-              title: Text("Start TIme"),
+              title: Text("Start Time"),
               subtitle: Text(widget.stime),
             ),
             ListTile(
-              title: Text("Start TIme"),
+              title: Text("End Time"),
               subtitle: Text(widget.etime),
             ),
             SizedBox(
@@ -137,7 +137,7 @@ class _UpdateTodoState extends State<UpdateTodo> {
         height: 50,
         width: 100,
         decoration: BoxDecoration(
-            color: Colors.blue, borderRadius: BorderRadius.circular(10)),
+            color: Colors.teal[800], borderRadius: BorderRadius.circular(10)),
         child: TextButton(
           onPressed: () async {
             // final firebaseUser = FirebaseAuth.instance.currentUser!;
@@ -199,17 +199,19 @@ class _UpdateTodoState extends State<UpdateTodo> {
         height: 50,
         width: 100,
         decoration: BoxDecoration(
-            color: Colors.red, borderRadius: BorderRadius.circular(10)),
+            color: Colors.red[900], borderRadius: BorderRadius.circular(10)),
         child: TextButton(
           onPressed: () async {
-            // final firebaseUser = FirebaseAuth.instance.currentUser!;
-            await FirebaseFirestore.instance
-                .collection('notes')
-                .doc(widget.docId)
-                .delete();
+            createAlertDialog(context);
 
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => HomePage()));
+            //
+            // await FirebaseFirestore.instance
+            //     .collection('notes')
+            //     .doc(widget.docId)
+            //     .delete();
+            //
+            // Navigator.push(
+            //     context, MaterialPageRoute(builder: (context) => HomePage()));
           },
           child: Text(
             'Delete',
@@ -243,12 +245,12 @@ class _UpdateTodoState extends State<UpdateTodo> {
                     });
                   },
                   child: Text(' Date'),
-                  color: Colors.amber,
-                  minWidth: 150,
+                  color: Colors.teal[400],
+                  minWidth: 130,
                 ),
               ),
               SizedBox(
-                width: 10.0,
+                width: 20.0,
               ),
               Container(
                 child: FlatButton(
@@ -257,8 +259,8 @@ class _UpdateTodoState extends State<UpdateTodo> {
                     print(stime);
                   },
                   child: Text('Time'),
-                  color: Colors.amber,
-                  minWidth: 150,
+                  color: Colors.teal[400],
+                  minWidth: 130,
                 ),
               ),
             ],
@@ -291,12 +293,12 @@ class _UpdateTodoState extends State<UpdateTodo> {
                     });
                   },
                   child: Text('Date'),
-                  color: Colors.pink,
-                  minWidth: 150,
+                  color: Colors.greenAccent,
+                  minWidth: 130,
                 ),
               ),
               SizedBox(
-                width: 10.0,
+                width: 20.0,
               ),
               Container(
                 child: FlatButton(
@@ -305,8 +307,8 @@ class _UpdateTodoState extends State<UpdateTodo> {
                     print(etime);
                   },
                   child: Text('Time'),
-                  color: Colors.pink,
-                  minWidth: 150,
+                  color: Colors.greenAccent,
+                  minWidth: 130,
                 ),
               ),
             ],
@@ -314,5 +316,42 @@ class _UpdateTodoState extends State<UpdateTodo> {
         ],
       ),
     );
+  }
+  createAlertDialog(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Are you want to sure you want to Delete?'),
+            actions: <Widget>[
+              MaterialButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  // Navigator.of(context).push(
+                  //     MaterialPageRoute(builder: (context) => HomeScreen()));
+                },
+                child: Text('NO'),
+              ),
+              MaterialButton(
+                onPressed: () async {
+
+
+
+                  await FirebaseFirestore.instance
+                      .collection('notes')
+                      .doc(widget.docId)
+                      .delete();
+
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => HomePage()));
+                },
+
+                child: Text('YES'),
+              ),
+            ],
+            elevation: 24.0,
+            backgroundColor: Colors.greenAccent,
+          );
+        });
   }
 }

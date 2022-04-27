@@ -49,7 +49,7 @@ class _AddTodoState extends State<AddTodo> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Add Note'),
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.teal[800],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -104,7 +104,7 @@ class _AddTodoState extends State<AddTodo> {
         height: 50,
         width: 100,
         decoration: BoxDecoration(
-            color: Colors.red, borderRadius: BorderRadius.circular(10)),
+            color: Colors.red[900], borderRadius: BorderRadius.circular(10)),
         child: TextButton(
           onPressed: () async {
             // final firebaseUser = FirebaseAuth.instance.currentUser!;
@@ -152,12 +152,12 @@ class _AddTodoState extends State<AddTodo> {
                     });
                   },
                   child: Text(' Date'),
-                  color: Colors.amber,
-                  minWidth: 150,
+                  color: Colors.teal[400],
+                  minWidth: 130,
                 ),
               ),
               SizedBox(
-                width: 10.0,
+                width: 20.0,
               ),
               Container(
                 child: FlatButton(
@@ -166,8 +166,8 @@ class _AddTodoState extends State<AddTodo> {
                     print(stime);
                   },
                   child: Text('Time'),
-                  color: Colors.amber,
-                  minWidth: 150,
+                  color: Colors.teal[400],
+                  minWidth: 130,
                 ),
               ),
             ],
@@ -200,12 +200,12 @@ class _AddTodoState extends State<AddTodo> {
                     });
                   },
                   child: Text('Date'),
-                  color: Colors.pink,
-                  minWidth: 150,
+                  color: Colors.greenAccent,
+                  minWidth: 130,
                 ),
               ),
               SizedBox(
-                width: 10.0,
+                width: 20.0,
               ),
               Container(
                 child: FlatButton(
@@ -214,8 +214,8 @@ class _AddTodoState extends State<AddTodo> {
                     print(etime);
                   },
                   child: Text('Time'),
-                  color: Colors.pink,
-                  minWidth: 150,
+                  color: Colors.greenAccent,
+                  minWidth: 130,
                 ),
               ),
             ],
