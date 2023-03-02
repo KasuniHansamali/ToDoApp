@@ -228,43 +228,43 @@ class _UpdateTodoState extends State<UpdateTodo> {
       child: Column(
         children: [
           Text("Start Date & Time"),
-          Row(
-            children: [
-              Container(
-                child: FlatButton(
-                  onPressed: () {
-                    showDatePicker(
-                            context: context,
-                            initialDate: DateTime.now(),
-                            firstDate: DateTime(2000),
-                            lastDate: DateTime(2050))
-                        .then((value) {
-                      setState(() {
-                        sdate = value!;
-                      });
-                    });
-                  },
-                  child: Text(' Date'),
-                  color: Colors.teal[400],
-                  minWidth: 130,
-                ),
-              ),
-              SizedBox(
-                width: 20.0,
-              ),
-              Container(
-                child: FlatButton(
-                  onPressed: () {
-                    sselectTime(context);
-                    print(stime);
-                  },
-                  child: Text('Time'),
-                  color: Colors.teal[400],
-                  minWidth: 130,
-                ),
-              ),
-            ],
-          ),
+          // Row(
+          //   children: [
+          //     Container(
+          //       child: FlatButton(
+          //         onPressed: () {
+          //           showDatePicker(
+          //                   context: context,
+          //                   initialDate: DateTime.now(),
+          //                   firstDate: DateTime(2000),
+          //                   lastDate: DateTime(2050))
+          //               .then((value) {
+          //             setState(() {
+          //               sdate = value!;
+          //             });
+          //           });
+          //         },
+          //         child: Text(' Date'),
+          //         color: Colors.teal[400],
+          //         minWidth: 130,
+          //       ),
+          //     ),
+          //     SizedBox(
+          //       width: 20.0,
+          //     ),
+          //     Container(
+          //       child: FlatButton(
+          //         onPressed: () {
+          //           sselectTime(context);
+          //           print(stime);
+          //         },
+          //         child: Text('Time'),
+          //         color: Colors.teal[400],
+          //         minWidth: 130,
+          //       ),
+          //     ),
+          //   ],
+          // ),
         ],
       ),
     );
@@ -276,43 +276,43 @@ class _UpdateTodoState extends State<UpdateTodo> {
       child: Column(
         children: [
           Text("End Date & Time"),
-          Row(
-            children: [
-              Container(
-                child: FlatButton(
-                  onPressed: () {
-                    showDatePicker(
-                            context: context,
-                            initialDate: DateTime.now(),
-                            firstDate: DateTime(2000),
-                            lastDate: DateTime(2050))
-                        .then((value) {
-                      setState(() {
-                        edate = value!;
-                      });
-                    });
-                  },
-                  child: Text('Date'),
-                  color: Colors.greenAccent,
-                  minWidth: 130,
-                ),
-              ),
-              SizedBox(
-                width: 20.0,
-              ),
-              Container(
-                child: FlatButton(
-                  onPressed: () {
-                    eselectTime(context);
-                    print(etime);
-                  },
-                  child: Text('Time'),
-                  color: Colors.greenAccent,
-                  minWidth: 130,
-                ),
-              ),
-            ],
-          ),
+          // Row(
+          //   children: [
+          //     Container(
+          //       child: FlatButton(
+          //         onPressed: () {
+          //           showDatePicker(
+          //                   context: context,
+          //                   initialDate: DateTime.now(),
+          //                   firstDate: DateTime(2000),
+          //                   lastDate: DateTime(2050))
+          //               .then((value) {
+          //             setState(() {
+          //               edate = value!;
+          //             });
+          //           });
+          //         },
+          //         child: Text('Date'),
+          //         color: Colors.greenAccent,
+          //         minWidth: 130,
+          //       ),
+          //     ),
+          //     SizedBox(
+          //       width: 20.0,
+          //     ),
+          //     Container(
+          //       child: FlatButton(
+          //         onPressed: () {
+          //           eselectTime(context);
+          //           print(etime);
+          //         },
+          //         child: Text('Time'),
+          //         color: Colors.greenAccent,
+          //         minWidth: 130,
+          //       ),
+          //     ),
+          //   ],
+          // ),
         ],
       ),
     );
